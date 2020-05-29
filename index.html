@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django2.0试做</title>
+</head>
+<body>
+    Helloooooooooooooooooooooooo world!!
+    <!--表单相关内容-->
+
+<form action="" method="post">
+    First name:<br>
+    <label>
+        <input type="text" name="firstname" value="Todd">
+    </label>
+    <br>
+    Last name:<br>
+    <label>
+        <input type="text" name="lastname" value="Combs">
+    </label>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+<ul id="cate_box" class="lf">
+    {% for type in type_list %}
+    <li>
+        <h3><a href="#">{{ type.type }}</a></h3>
+        <p>
+            {% for name in name_list %}
+                {% if name.type == type.type %}
+                    <span>{{ name.name }}</span>
+                {% endif %}
+            {% endfor %}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
